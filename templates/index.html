@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bantay Sugbu</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <div id="permission-request">
+        <p>This application requires access to your location to function correctly.</p>
+        <button onclick="requestGeolocationPermission()">Allow Geolocation</button>
+    </div>
+    <div id="content">
+        <div id="video-container">
+            <video id="video-feed" autoplay playsinline></video>
+            <div class="notification" id="notification">
+                <strong>A crime has been detected!</strong><br>
+                <span>Authorities will be notified if this notification is not closed within 5 seconds.</span>
+            </div>
+            <div class="icons">
+                <div class="icon-wrapper" id="history-icon-wrapper">
+                    <i class="fas fa-history"></i>
+                </div>
+                <div class="icon-wrapper" id="maps-icon-wrapper">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-sheet" id="history-sheet">
+            <div class="header">
+                <h3>History</h3>
+                <span class="close-btn" id="close-history">&times;</span>
+            </div>
+            <div class="content">
+                <ul id="history-list"></ul>
+            </div>
+        </div>
+        <div class="bottom-sheet" id="map-sheet">
+            <div class="header">
+                <h3>Map</h3>
+                <span class="close-btn" id="close-map">&times;</span>
+            </div>
+            <div id="map"></div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="./static/js/script.js"></script>
+</body>
+</html>
